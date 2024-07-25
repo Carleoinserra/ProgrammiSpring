@@ -1,24 +1,35 @@
 package app;
 
 public class User {
-    private String username;
-    private String email;
+    private String nome;
+    private String anni;
     
 	public User() {
-		super();
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
+		
 	}
 
-    // Costruttori, getter e setter
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getAnni() {
+		return anni;
+	}
+
+	public void setAnni(String anni) {
+		this.anni = anni;
+	}
+
+	@Override
+	public String toString() {
+		return "User [nome=" + nome + ", anni=" + anni + "]";
+	}
+	
+	
+
+    
 }

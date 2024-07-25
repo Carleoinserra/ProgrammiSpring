@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class UserController {
+	
+	
+	ArrayList<User> lista = new ArrayList<>();
 
     @GetMapping("/")
     public String getUser(Model model) {
@@ -46,6 +49,12 @@ public class UserController {
     	
     	model.addAttribute("nome", nome);
     	model.addAttribute("anni", anni);
+    	
+    	User p1 = new User();
+    	p1.setNome(nome);
+    	p1.setAnni(anni);
+    	
+    	lista.add(p1);
 			
     	
     	return "post";
@@ -53,4 +62,11 @@ public class UserController {
     	
     	
     }
+    @GetMapping("/show")
+    public String getLista(Model model) {
+    	model.addAttribute("lista", lista);
+        return "lista";
+       }
+    
+    
 }

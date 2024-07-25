@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<meta charset="ISO-8859-1">
+
+ <div class="container">
+<ul>
+<li th:each="item: ${lista}"> Nome: 
+<span th:text="${item.getNome()}"></span> <br>
+Anni: <span th:text="${item.getAnni()}"></span> 
+
+</li></ul></div>
+</body>
+</html>

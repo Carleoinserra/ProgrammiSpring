@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Users</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+</head>
+<body>
+<div class="container">
+<h1>Users</h1>
+<a href="/new">Add New Artist</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Mnasione</th>
+        <th>Cachet</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="artist : ${list}">
+        <td th:text="${artist.id}"></td>
+        <td th:text="${artist.nome}"></td>
+        <td th:text="${artist.mansione}"></td>
+        <td th:text="${artist.cachet}"></td>
+     <!--    <td>
+            
+            <a th:href="@{/users/delete/(id=${user.id})}">Delete</a>
+        </td> -->
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>
