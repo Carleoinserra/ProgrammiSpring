@@ -7,6 +7,13 @@ public class prodotto {
 	private String marca;
 	private double prezzo;
 	private int qnt;
+	private String img;
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
 	public String getNome() {
 		return nome;
 	}
