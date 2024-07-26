@@ -3,13 +3,46 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
+<div class="container">
 <h1>Spring web run</h1>
 
 <h3 th:text="${nome}"></h3>
 <ul>
 <li th:each="item: ${lista}">
 <span th:text="${item}"></span></li></ul>
+
+
+<h1 th:text= "Ciao"></h1>
+
+<h3>La somma dei numeri <span th:text="${add}"></span></h3>
+
+
+<ul>
+    <li th:each="item : ${listaNumeri}">Elemento: <span th:text="${item}"></span></li>
+</ul>
+
+ <table>
+        <thead>
+            <tr>
+                <th>Numero</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="item : ${listaNumeri}">
+                <td th:text="${item}">Elemento</td>
+              
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 </body>
 </html>
