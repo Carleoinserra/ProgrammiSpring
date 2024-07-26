@@ -78,5 +78,21 @@ public class UserController {
         return "lista";
        }
     
+    @GetMapping("/prod")
+    public String getProd(Model model) {
+    	
+    	prodotto p1 = new prodotto();
+    	p1.setNome("Latte");
+    	p1.setMarca("Parmalat");
+    	p1.setPrezzo(2.3);
+    	p1.setQnt(10);
+    	
+    	
+    	
+    	model.addAttribute("prod", p1);
+        return "prod";
+       }
+    
+    
     
 }
