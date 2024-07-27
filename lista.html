@@ -17,30 +17,38 @@
 
 
   
-  <div class="row">
-    <div class="col s12 m7" >
+ 
+   <div class="row">
     <form action = "/process" method = "post">
-      <div class="card" th:each = "prod: ${lista}">
-        <div class="card-image">
-        <!-- Per caricare una immagine con thymleaf dobbiamo utilizzare  la direttiva th:src -->
-          <img th:src="${prod.getImg()}">
-          
-          <span class="card-title" th:text="${prod.getNome()}">Card Title</span>
-        </div>
-        <div class="card-content">
-            Marca prodotto:  <p th:text="${prod.getMarca()}"></p>
+   
+  <div class="card col s3" th:each = "prod: ${lista}" >
+ 
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" th:src="${prod.getImg()}">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4" th:text="${prod.getNome()}"><i class="material-icons right">more_vert</i></span>
+      <p> <input type = "number" th:name ="qnts" value= "0"></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+         Marca prodotto:  <p th:text="${prod.getMarca()}"></p>
         Prezzo prodotto  <p th:text="${prod.getPrezzo()}"></p>
         Quantità in magazzino:  <p th:text="${prod.getQnt()}"></p>
-         <input type = "number" th:name ="qnts" value= "0">
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-       <input type="submit" value = "acquista">
-      </form>
     </div>
+   
+    
   </div>
+    </div>
+  
+    <button class="btn waves-effect waves-light column" type="submit" name="action">Acquista
+   
+  </button>
+  
+  </form>
+           
+  
 
 </body>
 </html>
