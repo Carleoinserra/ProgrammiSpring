@@ -50,6 +50,15 @@ public class UserController {
     @GetMapping("/form")
     public String getForm(Model model) {
     	
+    	
+    	prodotto p1 = new prodotto();
+    	p1.setNome("Nutella");
+    	p1.setMarca("Ferrero");
+    	p1.setPrezzo(3.2);
+    	p1.setQnt(10);
+    	p1.setImg("nutella.jpg");
+    	lista.add(p1);
+    	
         return "form";
        }
     
@@ -102,6 +111,41 @@ public class UserController {
         return "prod";
        }
     
+    @PostMapping("/process")
+    public String getProcess(Model model, @RequestParam("qnts")  String [] pezzi) {
+    	ArrayList <prodottoAc> listaP = new ArrayList<>();
+    	ArrayList <prodotto> prodottiAc = new ArrayList<>();
+    	ArrayList <Integer> num = new ArrayList<>();
+    	for (int i = 0; i < pezzi.length; i++) {
+    		
+    		if (!pezzi[i].equals("0")) {
+    			
+    			int pezzo = Integer.parseInt(pezzi[i]);
+    			num.add(pezzo);
+    			prodottiAc.add(lista.get(i));
+    			prodottoAc p1 = new prodottoAc();
+    			p1.setNome(lista.get(i).getNome());
+    			p1.setPezzi(pezzo);
+    			p1.setPrezzo(lista.get(i).getPrezzo());
+    			listaP.add(p1);
+    		}
+    		
+    		
+    	}
+    	
+    	System.out.println("Hai acquistato ");
+    	for (int i = 0; i < prodottiAc.size(); i++) {
+    		System.out.println(prodottiAc.get(i).getNome());
+    		System.out.println("In  tot: " + num.get(i) + " pezzi");
+    	}
+    	
+    	model.addAttribute("listaP", listaP);
+    	
+    	
+    
+    	 
+    	 return "buy";
+    }
     
     
 }

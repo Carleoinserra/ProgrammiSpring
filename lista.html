@@ -19,6 +19,7 @@
   
   <div class="row">
     <div class="col s12 m7" >
+    <form action = "/process" method = "post">
       <div class="card" th:each = "prod: ${lista}">
         <div class="card-image">
         <!-- Per caricare una immagine con thymleaf dobbiamo utilizzare  la direttiva th:src -->
@@ -30,12 +31,14 @@
             Marca prodotto:  <p th:text="${prod.getMarca()}"></p>
         Prezzo prodotto  <p th:text="${prod.getPrezzo()}"></p>
         Quantità in magazzino:  <p th:text="${prod.getQnt()}"></p>
-
+         <input type = "number" th:name ="qnts" value= "0">
         </div>
         <div class="card-action">
           <a href="#">This is a link</a>
         </div>
       </div>
+       <input type="submit" value = "acquista">
+      </form>
     </div>
   </div>
 
